@@ -1,0 +1,15 @@
+wsl
+redis-server
+redis-cli ping
+
+# in a new terminal
+conda activate new
+cd backend
+celery -A worker.celery_app worker --loglevel=info --pool=solo
+
+# in a new terminal
+conda activate new
+cd backend
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+

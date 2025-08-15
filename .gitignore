@@ -1,0 +1,20 @@
+# Environment
+backend/.env
+
+# Logs & Results
+**/__pycache__/
+**/*.pyc
+**/*.log
+*.mp4
+*.pdf
+*.csv
+*.jpg
+*.png
+frames/
+plots/
+downloads/
+paddle_output/
+single.py
+backend/tasks/inference/
+*.pdiparams
+*.zip

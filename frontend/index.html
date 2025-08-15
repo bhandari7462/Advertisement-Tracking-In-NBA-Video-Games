@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NBA Brand Visibility</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NBA Ad Analysis</h1>
+            <p>Analyze brand advertisements in NBA YouTube videos with AI precision</p>
+        </div>
+
+        <div class="main-content">
+            <div class="initial-input" id="initial-input">
+                <div class="glass-card">
+                    <div class="input-group">
+                        <label for="youtube-url">📺 Enter YouTube Video URL to Get Started</label>
+                        <input 
+                            type="url" 
+                            id="youtube-url" 
+                            class="input-field" 
+                            placeholder="https://www.youtube.com/watch?v=..."
+                            required
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="expanded-content" id="expanded-content">
+                
+                <div class="analysis-layout">
+                    <div class="video-panel">
+                        <div class="glass-card">
+                            <h3 style="margin-bottom: 20px; font-size: 1.5rem;">📹 Video Preview</h3>
+                            <div class="youtube-container" id="youtube-container">
+                                <div class="youtube-placeholder">
+                                    <i>📺</i>
+                                    <div>Waiting for valid URL...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-panel">
+                        <div class="glass-card">
+                            <div class="input-group">
+                                <label for="brands">🏷️ Select Brands to Detect</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item" onclick="toggleCheckbox('youtube-tv')">
+                                        <input type="checkbox" id="youtube-tv" value="YouTube TV">
+                                        <div class="custom-checkbox"></div>
+                                        <span>YouTube TV</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('statefarm')">
+                                        <input type="checkbox" id="statefarm" value="StateFarm">
+                                        <div class="custom-checkbox"></div>
+                                        <span>StateFarm</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('coinbase')">
+                                        <input type="checkbox" id="coinbase" value="Coinbase">
+                                        <div class="custom-checkbox"></div>
+                                        <span>Coinbase</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('michelob')">
+                                        <input type="checkbox" id="michelob" value="Michelob Ultra">
+                                        <div class="custom-checkbox"></div>
+                                        <span>Michelob Ultra</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('google')">
+                                        <input type="checkbox" id="google" value="Google">
+                                        <div class="custom-checkbox"></div>
+                                        <span>Google</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('kia')">
+                                        <input type="checkbox" id="kia" value="Kia">
+                                        <div class="custom-checkbox"></div>
+                                        <span>Kia</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('tissot')">
+                                        <input type="checkbox" id="tissot" value="Tissot">
+                                        <div class="custom-checkbox"></div>
+                                        <span>Tissot</span>
+                                    </div>
+                                    <div class="checkbox-item" onclick="toggleCheckbox('espn')">
+                                        <input type="checkbox" id="espn" value="ESPN">
+                                        <div class="custom-checkbox"></div>
+                                        <span>ESPN</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="model">🤖 Select Analysis Model</label>
+                                <div class="radio-group">
+                                    <!-- <div class="radio-item selected" onclick="selectRadio('fine-keras-ocr')">
+                                        <input type="radio" id="fine-keras-ocr" name="model" value="FineTuned Keras OCR" checked>
+                                        <div class="custom-radio"></div>
+                                        <span><strong>FineTuned Keras OCR</strong></span>
+                                    </div> -->
+                                    <div class="radio-item" onclick="selectRadio('fine-paddle-ocr')">
+                                        <input type="radio" id="fine-paddle-ocr" name="model" value="epoch50">
+                                        <div class="custom-radio"></div>
+                                        <span><strong>FineTuned PaddleOCR</strong></span>
+                                    </div>
+                                    <!-- <div class="radio-item" onclick="selectRadio('keras-ocr')">
+                                        <input type="radio" id="keras-ocr" name="model" value="PP-OCRv5_server">
+                                        <div class="custom-radio"></div>
+                                        <span><strong>Pretrained Keras</strong></span>
+                                    </div> -->
+                                    <div class="radio-item" onclick="selectRadio('paddle-ocr')">
+                                        <input type="radio" id="paddle-ocr" name="model" value="PP-OCRv5_server">
+                                        <div class="custom-radio"></div>
+                                        <span><strong>Pretrained PaddleOCR</strong></span>
+                                    </div>
+                                    <!-- <div class="radio-item" onclick="selectRadio('ocr-yolo')">
+                                        <input type="radio" id="ocr-yolo" name="model" value="OCR+YOLOv8">
+                                        <div class="custom-radio"></div>
+                                        <span><strong>OCR + YOLOv8</strong> (Advanced Detection)</span>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="email">📧 Email Address for Report</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    class="input-field" 
+                                    placeholder="your.email@example.com"
+                                    required
+                                >
+                            </div>
+
+                            <button class="analyze-btn" onclick="startAnalysis()">
+                                🚀 Start Analysis
+                            </button>
+
+                            <div class="processing-message" id="processing-msg">
+                                <div class="spinner"></div>
+                                <strong>Processing Started!</strong><br>
+                                Your analysis is running. You'll receive detailed results via email.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-section">
+                     <div class="features">
+                        <div class="feature-card">
+                            <span class="feature-icon">🤖</span>
+                            <h3>AI-Powered</h3>
+                            <p>Advanced computer vision for accurate brand detection.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">⚡</span>
+                            <h3>Fast Processing</h3>
+                            <p>Quick analysis with background processing and email delivery.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">📊</span>
+                            <h3>Detailed Reports</h3>
+                            <p>Comprehensive, timestamped analysis delivered to your inbox.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
