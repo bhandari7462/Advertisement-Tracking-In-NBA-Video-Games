@@ -1,18 +1,17 @@
-# Advertisement Analysis in NBA Videos
+# Advertisement-Tracking-In-NBA-Video-Games
 
-An end-to-end computer vision system that automatically detects and tracks brand advertisements in NBA game videos using OCR, deep learning, and asynchronous video processing. The system extracts frames from YouTube-hosted games, runs OCR to identify brand names, and generates visual PDF reports — all triggered via a user-friendly web interface.
+An end-to-end computer vision pipeline designed to automatically detect and track brand advertisements in NBA game videos. Leveraging OCR, deep learning models, and asynchronous video processing, the system extracts frames from YouTube-hosted game footage, identifies brand names through text recognition, and compiles the results into visually rich PDF reports. All processing is seamlessly triggered and managed via an intuitive, user-friendly web interface.
 
 ---
 
 ## Key Features
 
-- **YouTube Video Processing**: Download videos with `yt-dlp`
-- **OCR Text Extraction**: Fine-tuned PaddleOCR for robust text detection
-- **Fuzzy Matching**: Handle OCR errors via `RapidFuzz`
-- **Automated Email Reporting**: PDF reports sent directly to users
-- **REST API (FastAPI)**: Easily trigger video-to-report analysis via HTTP
-- **Modular Pipeline**: Cleanly structured components (download, OCR, match, report)
-
+- **YouTube Video Processing** – Download and preprocess NBA game videos using `yt-dlp`.
+- **OCR Text Extraction** – Apply a fine-tuned PaddleOCR model for high-accuracy brand text detection.
+- **Fuzzy Matching** – Correct OCR inaccuracies and match brand names using `RapidFuzz`.
+- **Automated Email Reporting** – Generate PDF reports and deliver them directly to users via email.
+- **REST API with FastAPI** – Enable seamless video-to-report analysis through simple HTTP requests.
+- **Modular Pipeline Design** – Maintain clean separation of concerns across download, OCR, matching, and reporting stages.
 ---
 
 ## Tech Stack
@@ -26,6 +25,7 @@ An end-to-end computer vision system that automatically detects and tracks brand
 | Matching      | `RapidFuzz`, `fuzzywuzzy` |
 | Async Engine  | `Celery`, `Redis` |
 | Reports       | `email`, `Deatiled PDF` |
+
 
 ---
 
@@ -330,8 +330,8 @@ This project would not have been possible without the contributions and inspirat
 
 ## 📬 Contact
 
-Created by [Faijan Khan](https://github.com/faijan-khan)
-📧 [faijankhan090803@gmail.com](mailto:faijankhan090803@gmail.com)
+Created by [Kishan Bhandari](https://github.com/bhandari7462)
+📧 [kishan2003bhandari@gmail.com](mailto:kishan2003bhandari@gmail.com)
 
 ---
 
