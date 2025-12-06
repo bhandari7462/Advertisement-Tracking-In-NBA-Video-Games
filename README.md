@@ -312,7 +312,7 @@ MIT License. See [LICENSE](LICENSE) for full details.
 
 This project would not have been possible without the contributions and inspiration from the following open-source projects, frameworks, and individuals:
 
-- [Keras-OCR](https://github.com/faizanvadsaria/Keras-OCR)  
+- [Keras-OCR](https://pypi.org/project/keras-ocr/)  
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)  
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)  
 - [FastAPI](https://fastapi.tiangolo.com/)  
